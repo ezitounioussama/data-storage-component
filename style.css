@@ -1,0 +1,273 @@
+/* varibales that I will work with on this clone */
+:root {
+  --background: hsl(229, 57%, 11%);
+  --white: hsl(243, 100%, 93%);
+  --grey: hsl(229, 7%, 55%);
+  --dblue: hsl(228, 56%, 26%);
+  --f-size: 14px;
+  --regular: 500;
+  --bold: 700;
+}
+
+/* start of styling */
+
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box > div:nth-child(1) {
+  border-radius: 10px 100px 10px 10px;
+  width: 300px;
+  height: 200px;
+  background-color: var(--dblue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+.logo > img {
+  width: 105px;
+}
+
+.files-box {
+  display: flex;
+}
+
+.files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: var(--background);
+}
+
+.msg > p {
+  margin: 5px;
+  font-weight: var(--bold);
+  font-size: 12px;
+  color: var(--grey);
+}
+
+.storage > p {
+  color: var(--white);
+  font-weight: var(--regular);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+p > span {
+  font-weight: bold;
+}
+
+/* media query */
+@media (min-width: 375px) {
+  body {
+    background: var(--background) url(/images/bg-desktop.png) no-repeat 0px
+      350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    height: 400px;
+  }
+  .msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 150px;
+    height: 70px;
+    position: relative;
+    z-index: 100;
+    border-radius: 10px 10px 0px 10px;
+    left: 250px;
+  }
+  .msg::after {
+    content: "";
+    width: 0;
+    height: 0;
+    transform: rotate(45deg);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid white;
+
+    position: absolute;
+    top: 60px;
+    left: 123px;
+  }
+  .box > div:nth-child(2) {
+    border-radius: 10px 10px 10px 10px;
+    width: 450px;
+    height: 200px;
+  }
+  .storage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    background-color: var(--dblue);
+    position: relative;
+    border-radius: 10px 10px 10px 10px;
+    width: 450px;
+    height: 150px;
+    top: -20px;
+  }
+  input[type="range"] {
+    width: 350px;
+    background-color: var(--dblue);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  input[type="range"]::-moz-range-track {
+    background-color: var(--background);
+    color: black;
+    padding: 10px 4px;
+    border-radius: 20px;
+    width: 350px;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    background-color: var(--white);
+    border-radius: 100%;
+    width: 13px;
+    height: 13px;
+  }
+
+  input[type="range"]::-moz-range-progress {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 163, 153, 1) 0%,
+      rgba(255, 77, 91, 1) 100%
+    );
+    height: 15px;
+    border-radius: 10px;
+    width: inherit;
+  }
+
+  .gb {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: var(--bold);
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    background: var(--background) url(/images/bg-mobile.png) no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 150px;
+    height: 70px;
+    position: relative;
+    top: -25px;
+    z-index: 100;
+    border-radius: 10px 10px 10px 10px;
+  }
+  .msg::after {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+  .box > div:nth-child(2) {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 10px 10px;
+    width: 300px;
+    height: 200px;
+    margin-top: 50px;
+  }
+  .storage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dblue);
+    border-radius: 10px 10px 10px 10px;
+    width: 300px;
+    height: 200px;
+  }
+  input[type="range"] {
+    width: 250px;
+    background-color: var(--dblue);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  input[type="range"]::-moz-range-track {
+    background-color: var(--background);
+    color: black;
+    padding: 8px 2px;
+    border-radius: 20px;
+    width: 250px;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    background-color: var(--white);
+    border-radius: 100%;
+    width: 11px;
+    height: 11px;
+  }
+
+  input[type="range"]::-moz-range-progress {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 163, 153, 1) 0%,
+      rgba(255, 77, 91, 1) 100%
+    );
+    height: 13px;
+    border-radius: 10px;
+  }
+
+  .gb {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: var(--bold);
+  }
+}
